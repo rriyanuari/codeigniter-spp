@@ -23,7 +23,7 @@ class Mahasiswa extends CI_Controller {
       $data_user	=	$this->Model_user->semua()->result_array();
       $data = [
         'title' 		=> 'Data User',
-        'page' 			=> 'user_master',
+        'page' 			=> 'mahasiswa_master',
         'users'			=> $data_user			
       ];
       $this->load->view('templates/admin/index.php', $data);

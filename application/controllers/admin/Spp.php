@@ -22,8 +22,8 @@ class Spp extends CI_Controller {
 
       $data_user	=	$this->Model_user->semua()->result_array();
       $data = [
-        'title' 		=> 'Data SPP',
-        'page' 			=> 'spp',
+        'title' 		=> 'Data User',
+        'page' 			=> 'spp_master',
         'users'			=> $data_user			
       ];
       $this->load->view('templates/admin/index.php', $data);
