@@ -47,6 +47,7 @@ $route['default_controller'] = 'auth/login';
 
     // SPP
     $route['admin/buku-spp'] = 'admin/buku_spp';
+      $route['admin/buku-spp/(:any)'] = 'admin/buku_spp/mahasiswa/$1';
     $route['admin/pembayaran]'] = 'admin/pembayaran';
       
     $route['admin/laporan'] = 'admin/laporan';

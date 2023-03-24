@@ -37,8 +37,8 @@
 							<td class="text-center">TI 19 SE M</td>
 							<td class="text-center"><span class="badge badge-danger">- 2 bulan</span></td>
 							<td width="20%" class="project-actions text-center">
-								<a href="#" class="btn btn-sm btn-primary mr-2">
-									<i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="detail"></i>
+								<a href="buku-spp/1119110002" class="btn btn-sm btn-primary mr-2" data-toggle="tooltip" data-placement="top" title="detail">
+									<i class="fas fa-info-circle"></i>
 								</a>
 							</td>
 						</tr>
@@ -48,9 +48,9 @@
 							<td class="text-center">TI 19 CDM M</td>
 							<td class="text-center"><span class="badge badge-success">Lunas</span></td>
 							<td width="20%" class="project-actions text-center">
-								<button class="btn btn-sm btn-primary mr-2" data-toggle="modal" data-target="#exampleModal">
+								<a href="buku-spp/1119110011" class="btn btn-sm btn-primary mr-2" data-toggle="tooltip" data-placement="top" title="detail">
 									<i class="fas fa-info-circle"></i>
-								</button>
+								</a>
 							</td>
 						</tr>
 					</tbody>
@@ -63,27 +63,3 @@
 	<!-- /.col -->
 </div>
 <!-- /.Data Table -->
-
-<div class="modal fade" data-backdrop="false" id="exampleModal">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">
-						Ahmad Sopian Sauri <br />
-						<span class="text-l">1119110011</span>
-					</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
-        </div>
-        <div class="modal-footer bg-whitesmoke br">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
