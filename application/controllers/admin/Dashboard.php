@@ -11,10 +11,8 @@ class Dashboard extends CI_Controller {
     }
 
     if($this->session->userdata('role') == 1 ){
-      redirect(base_url());
+      redirect(base_url('user'));
     }
-
-
   }
 
   // MASTER ----------------------

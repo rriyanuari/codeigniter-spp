@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a href="<?php echo base_url(); ?>">Areta Collage</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <img src="<?=base_url('public/')?>img/logo.png" class="image" width="50">
+            AC
           </div>
           <ul class="sidebar-menu">
             <li class="<?php echo $this->uri->segment(2) == 'dashboard' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/dashboard"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
@@ -75,8 +75,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li class="<?php echo $this->uri->segment(2) == 'buku-spp' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/buku-spp"><i class="fas fa-file-invoice-dollar"></i> <span>Buku SPP</span></a></li>
             <li class="<?php echo $this->uri->segment(2) == 'pembayaran' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/pembayaran"><i class="fas fa-wallet"></i> <span>Pembayaran</span></a></li>
 
-            <li class="menu-header">Laporan</li>
-            <li class="<?php echo $this->uri->segment(2) == 'laporan' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/laporan"><i class="fas fa-clipboard-list"></i> <span>Laporan</span></a></li>
+            <!-- <li class="menu-header">Laporan</li>
+            <li class="<?php echo $this->uri->segment(2) == 'laporan' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/laporan"><i class="fas fa-clipboard-list"></i> <span>Laporan</span></a></li> -->
 
           </ul>
 
@@ -97,11 +97,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
 
       <footer class="main-footer">
-        <div class="footer-left">
-          Copyright &copy; 2022
-        </div>
-        <div class="footer-right">
-          
+        <div class="container text-center">
+          Copyright &copy; 2022 <br /> Informatics Areta Collage
         </div>
       </footer>
     </div>

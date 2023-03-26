@@ -8,10 +8,21 @@
             return $query;
         }
 
+        public function semua_desc(){
+            $query = $this->db  ->select('pembayaran.id, pembayaran.nim, pembayaran.periode, pembayaran.tgl_bayar, pembayaran.nominal_bayar, mahasiswa.nama_lengkap')
+                                ->from('pembayaran')
+                                ->order_by("tgl_bayar","desc")
+                                ->join('mahasiswa', 'pembayaran.nim = mahasiswa.nim', 'LEFT')                    
+                                ->get()
+                                ;
+            return $query;
+        }
+
         public function buku_spp($periode, $nim){
             $query = $this->db  ->select('*')
                                 ->where('periode', $periode)
                                 ->where('nim', $nim)
+                                ->order_by("tgl_bayar","asc")
                                 ->get('pembayaran');
             return $query;
         }

@@ -13,47 +13,47 @@ class Pembayaran extends CI_Controller {
     if($this->session->userdata('role') == 1 ){
       redirect(base_url());
     }
+
+    $this->load->model(['Model_pembayaran']);
+
   }
 
   // MASTER ----------------------
     public function index()
     {
-      $this->load->model(['Model_user']);
-
-      $data_user	=	$this->Model_user->semua()->result_array();
+      $data_pembayaran	=	$this->Model_pembayaran->semua_desc()->result_array();
       $data = [
-        'title' 		=> 'Data SPP',
-        'page' 			=> 'pembayaran',
-        'users'			=> $data_user			
+        'title' 		      => 'Data Pembayaran',
+        'page' 			      => 'pembayaran_master',
+        'pembayarans'			=> $data_pembayaran			
       ];
       $this->load->view('templates/admin/index.php', $data);
-      $this->load->view('function/admin/user.php');
+      $this->load->view('function/admin/pembayaran.php');
     }
 
-    public function tambah()
+    public function tambah($nim, $periode)
     {
       $data = [
-        'title' 		=> 'Tambah User',
-        'page' 			=> 'user_tambah',
+        'title' 		=> 'Tambah Pembayaran - ' . $nim,
+        'page' 			=> 'pembayaran_tambah',
+        'nim' 			=> $nim,
+        'periode' 	=> $periode,
       ];
       $this->load->view('templates/admin/index.php', $data);
-      $this->load->view('function/admin/user.php');
+      $this->load->view('function/admin/pembayaran.php');
     }
 
     public function proses_tambah()
     {
-      $this->load->model(['Model_user']);
-  
-      $username = $this->input->post('username');
-      $password = $this->input->post('password');
-      $role = $this->input->post('role');
-  
+      date_default_timezone_set("Asia/Jakarta");
+
       $data = array(
-        'username'       => $username,
-        'password'       => $password,
-        'role'           => $role,
-        );
-      $insert = $this->Model_user->tambah($data,'t_user');
+        'nim'             => $this->input->post('nim'),
+        'periode'         => $this->input->post('periode'),
+        'nominal_bayar'   => $this->input->post('nominal_bayar'),
+        'tgl_bayar'   => date('Y-m-d', time())
+      );
+      $insert = $this->Model_pembayaran->tambah($data,'pembayaran');
       
       if($insert){
         echo "success";
@@ -65,52 +65,40 @@ class Pembayaran extends CI_Controller {
 
     public function proses_hapus()
     {
-      $this->load->model(['Model_user']);
-  
       $id = $this->input->post('id');
   
-      if($this->Model_user->hapus_by_id($id)){
+      if($this->Model_pembayaran->hapus_by_id($id)){
         echo "success";
       } else{
         echo "error";
-        
       }
     }
 
     public function edit($id)
     {
-      $this->load->model(['Model_user']);
-
-      $data_user	=	$this->Model_user->by_id($id)->row_array();
+      $data_pembayaran	=	$this->Model_pembayaran->by_id($id)->row_array();
       $data = [
-        'title' 		=> 'Edit User',
-        'page' 			=> 'user_edit',
-        'user'			=> $data_user			
+        'title' 		    => 'Edit pembayaran',
+        'page' 			    => 'pembayaran_edit',
+        'pembayaran'		=> $data_pembayaran			
       ];
       $this->load->view('templates/admin/index.php', $data);
-      $this->load->view('function/admin/user.php');
+      $this->load->view('function/admin/pembayaran.php');
     }
 
     public function proses_edit()
     {
-      $this->load->model(['Model_user']);
-
-      $id = $this->input->post('id');
-      $username = $this->input->post('username');
-      $password = $this->input->post('password');
-      $role = $this->input->post('role');
-
       $data = array(
-        'username' => $username,
-        'password' => $password,
-        'role' => $role
+        'nim'             => $this->input->post('nim'),
+        'periode'         => $this->input->post('periode'),
+        'nominal_bayar'   => $this->input->post('nominal_bayar'),
       );
 
       $where = array(
-        'id_user' => $id
+        'id' => $this->input->post('id')
       );
 
-      if($this->Model_user->update_by_id($where, $data, 't_user')){
+      if($this->Model_pembayaran->update_by_id($where, $data)){
         echo "success";
       } else{
         echo "error";

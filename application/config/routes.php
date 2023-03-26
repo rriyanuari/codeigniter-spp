@@ -11,6 +11,10 @@ $route['default_controller'] = 'auth/login';
   $route['logout'] = 'auth/logout';
 
 // ----------
+  
+
+// User
+  $route['user'] = 'User';
 
 // ----------
 
@@ -45,8 +49,14 @@ $route['default_controller'] = 'auth/login';
     // SPP
     $route['admin/buku-spp'] = 'admin/buku_spp';
       $route['admin/buku-spp/(:any)'] = 'admin/buku_spp/mahasiswa/$1';
-    $route['admin/pembayaran]'] = 'admin/pembayaran';
-      
+    
+    $route['admin/pembayaran'] = 'admin/pembayaran';
+      $route['admin/tambah-pembayaran/(:any)/(:any)'] = 'admin/pembayaran/tambah/$1/$2';
+      $route['admin/proses-tambah-pembayaran'] = 'admin/pembayaran/proses_tambah';
+      $route['admin/proses-hapus-pembayaran'] = 'admin/pembayaran/proses_hapus';
+      $route['admin/edit-pembayaran/(:any)'] = 'admin/pembayaran/edit/$1';
+      $route['admin/proses-edit-pembayaran'] = 'admin/pembayaran/proses_edit';
+
     $route['admin/laporan'] = 'admin/laporan';
       $route['admin/laporan-print'] = 'admin/laporan_print';
 // -------------

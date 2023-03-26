@@ -40,7 +40,7 @@
 								</select>
 							</div>
 							<div class="col-3">
-								<button href="<?= base_url('admin/buku-spp/'.$mahasiswa['nim']). "?"; ?>" class="btn btn-sm btn-primary" id="tmb_cari">Pilih</button>
+								<button class="btn btn-sm btn-primary" id="tmb_cari">Pilih</button>
 							</div>
 						</div>
 
@@ -69,6 +69,15 @@
 								<div class="col">Total Tagihan</div>
 								<div class="col">: Rp. <?= number_format($data_tagihan['total_tagihan'], 0, ',', '.'); ?></div>
 							</div>
+							<div class="row">
+								<div class="col-auto ml-auto">
+									<a href="<?= base_url('admin/tambah-pembayaran/' . $mahasiswa['nim'] . "/" . $periode) ?>">
+										<button type="button" class="btn btn-success">
+											<i class="fas fa-plus"></i> <b>Input Pembayaran</b>
+										</button>
+									</a>
+								</div>
+							</div>
 						</div>
 						
 						<thead>
@@ -90,7 +99,7 @@
 							<tr>
 								<td class="text-center"><?= $no; ?></td>
 								<td class=""><?= $buku_spp['periode'] ?></td>
-								<td class="text-center"><?= $buku_spp['tgl_bayar'] ?></td>
+								<td class="text-center"><?= date( 'd-M-Y', strtotime($buku_spp['tgl_bayar']) ); ?></td>
 								<td class="text-right"><?= number_format($buku_spp['nominal_bayar'], 0, ',', '.');  ?></td>
 							</tr>
 							<?php endforeach; ?>
