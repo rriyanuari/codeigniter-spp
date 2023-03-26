@@ -14,6 +14,13 @@
                                 ->get('tagihan');
             return $query;
         }
+
+        public function by_jurusan($jurusan){
+            $query = $this->db  ->select('*')
+                                ->where('jurusan', $jurusan)
+                                ->get('tagihan');
+            return $query;
+        }
         
         public function tambah($data){
             $query = $this->db->insert('tagihan', $data);
