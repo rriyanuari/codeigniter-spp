@@ -53,7 +53,7 @@ class User extends CI_Controller {
         'password'       => $password,
         'role'           => $role,
         );
-      $insert = $this->Model_user->tambah($data,'t_user');
+      $insert = $this->Model_user->tambah($data,'user');
       
       if($insert){
         echo "success";
@@ -110,7 +110,7 @@ class User extends CI_Controller {
         'id_user' => $id
       );
 
-      if($this->Model_user->update_by_id($where, $data, 't_user')){
+      if($this->Model_user->update_by_id($where, $data, 'user')){
         echo "success";
       } else{
         echo "error";

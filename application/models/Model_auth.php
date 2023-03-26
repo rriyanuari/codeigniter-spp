@@ -4,7 +4,7 @@
 
     public function getusername($username){
       $this->db->select("*");
-      $this->db->from("t_user");
+      $this->db->from("user");
       $this->db->where("username", $username);
       $query = $this->db->get();
       return $query->row();

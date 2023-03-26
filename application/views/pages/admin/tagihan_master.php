@@ -4,44 +4,42 @@
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
-        <table class="table table-hover display nowrap" style="width:100%">
+        <table class="table table-hover display nowrap" id="dataUser" style="width:100%">
           <div class="d-flex mb-4">
 
             <div class="ml-auto">
-              <a href="<?= base_url('admin/tambah-mahasiswa') ?>">
+              <a href="<?= base_url('admin/tambah-tagihan') ?>">
                 <button type="button" class="btn btn-success ">
-                  <i class="fas fa-plus"></i> <b>Tambah Mahasiswa</b>
+                  <i class="fas fa-plus"></i> <b>Tambah Tagihan</b>
                 </button>
               </a>
             </div>
           </div>
-    
+
           <thead>
-            <tr>  
+            <tr class="text-center">  
               <th>No</th>
-              <th>NIM</th>
-              <th>Nama</th>
-              <th>Jenis Kelamin</th>
+              <th>Periode Tahun</th>
               <th>Jurusan</th>
-              <th class="text-center">Action</th>
+              <th>Jumlah Pembayaran</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <?php
-            $no = 1;
-            foreach($mahasiswas as $mahasiswa):
+              $no = 1;
+              foreach($tagihans as $tagihan):
             ?>
               <tr>
                 <td width="10%" class="text-center"><?= $no++; ?></td>
-                <td><?= $mahasiswa['nim'] ?></td>
-                <td><?= $mahasiswa['nama_lengkap'] ?></td>
-                <td><?= $mahasiswa['jenis_kelamin'] ?></td>
-                <td><?= $mahasiswa['jurusan'] ?></td>
+                <td class="text-center"><?= $tagihan['periode']; ?></td>
+                <td><?= $tagihan['jurusan']; ?></td>
+                <td class="text-right"><span class="text-left">Rp.</span> <?= number_format($tagihan['total_tagihan'], 0, ',', '.'); ?></td>
                 <td width="20%" class="project-actions text-center">
-                  <a href="<?=base_url('admin/edit-mahasiswa/').$mahasiswa['id']?>" class="btn btn-sm btn-primary mr-2">
+                  <a href="<?=base_url('admin/edit-tagihan/').$tagihan['id']?>" class="btn btn-sm btn-primary mr-2">
                     <i class="fas fa-edit" data-toggle="tooltip" data-placement="top" title="edit"></i>
                   </a>
-                  <a href="#" class="btn btn-sm btn-danger tmb_hapus" id="<?= $mahasiswa['id'] ?>" >
+                  <a href="#" class="btn btn-sm btn-danger mr-2 tmb_hapus" id="<?= $tagihan ['id'] ?>">
                     <i class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="hapus"></i>
                   </a>
                 </td>

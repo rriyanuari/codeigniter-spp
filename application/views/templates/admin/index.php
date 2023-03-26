@@ -69,11 +69,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li class="menu-header">Master Data</li>
             <li class="<?php echo $this->uri->segment(2) == 'user' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/user"><i class="fas fa-users"></i> <span>User</span></a></li>
             <li class="<?php echo $this->uri->segment(2) == 'mahasiswa' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/mahasiswa"><i class="fas fa-user-graduate"></i> <span>Mahasiswa</span></a></li>
-            <li class="<?php echo $this->uri->segment(2) == 'spp' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/spp"><i class="fas fa-user-graduate"></i> <span>Spp</span></a></li>
+            <li class="<?php echo $this->uri->segment(2) == 'tagihan' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/tagihan"><i class="fas fa-money-bill"></i><span>Tagihan</span></a></li>
 
             <li class="menu-header">SPP</li>
             <li class="<?php echo $this->uri->segment(2) == 'buku-spp' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/buku-spp"><i class="fas fa-file-invoice-dollar"></i> <span>Buku SPP</span></a></li>
-            <li class="<?php echo $this->uri->segment(2) == 'pembayaran' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/pembayaran"><i class="fas fa-shopping-cart"></i> <span>Pembayaran</span></a></li>
+            <li class="<?php echo $this->uri->segment(2) == 'pembayaran' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/pembayaran"><i class="fas fa-wallet"></i> <span>Pembayaran</span></a></li>
 
             <li class="menu-header">Laporan</li>
             <li class="<?php echo $this->uri->segment(2) == 'laporan' ? 'active' : ''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>admin/laporan"><i class="fas fa-clipboard-list"></i> <span>Laporan</span></a></li>

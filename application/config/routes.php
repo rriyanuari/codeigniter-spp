@@ -12,9 +12,6 @@ $route['default_controller'] = 'auth/login';
 
 // ----------
 
-// User
-  $route['home'] = 'user/index';
-
 // ----------
 
 // Admin
@@ -36,12 +33,12 @@ $route['default_controller'] = 'auth/login';
         $route['admin/edit-mahasiswa/(:any)'] = 'admin/mahasiswa/edit/$1';
         $route['admin/proses-edit-mahasiswa'] = 'admin/mahasiswa/proses_edit';
 
-      $route['admin/spp'] = 'admin/spp';
-        $route['admin/tambah-spp'] = 'admin/spp/tambah';
-        $route['admin/proses-tambah-spp'] = 'admin/spp/proses_tambah';
-        $route['admin/proses-hapus-spp'] = 'admin/spp/proses_hapus';
-        $route['admin/edit-spp/(:any)'] = 'admin/spp/edit/$1';
-        $route['admin/proses-edit-spp'] = 'admin/spp/proses_edit';
+      $route['admin/tagihan'] = 'admin/tagihan';
+        $route['admin/tambah-tagihan'] = 'admin/tagihan/tambah';
+        $route['admin/proses-tambah-tagihan'] = 'admin/tagihan/proses_tambah';
+        $route['admin/proses-hapus-tagihan'] = 'admin/tagihan/proses_hapus';
+        $route['admin/edit-tagihan/(:any)'] = 'admin/tagihan/edit/$1';
+        $route['admin/proses-edit-tagihan'] = 'admin/tagihan/proses_edit';
     
     // ============
 

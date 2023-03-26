@@ -38,10 +38,10 @@
               <td><?= $user['username']; ?></td>
               <td><?= $user['password']; ?></td>
               <td width="20%" class="project-actions text-center">
-                  <a href="<?=base_url('admin/edit-user/').$user['id_user']?>" class="mr-2">
+                  <a href="<?=base_url('admin/edit-user/').$user['id_user']?>" class="btn btn-sm btn-primary mr-2">
                     <i class="fas fa-edit" data-toggle="tooltip" data-placement="top" title="edit"></i>
                   </a>
-                  <a href="#" class="tmb_hapus text-danger" id="<?= $user['id_user'] ?>">
+                  <a href="#" class="btn btn-sm btn-danger tmb_hapus" id="<?= $user['id_user'] ?>">
                     <i class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="hapus"></i>
                   </a>
               </td>
